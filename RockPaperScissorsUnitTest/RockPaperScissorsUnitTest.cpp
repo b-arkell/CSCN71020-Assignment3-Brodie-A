@@ -113,4 +113,39 @@ namespace RockPaperScissorsUnitTest
 			Assert::AreEqual(std::string(expected), std::string(output));
 		}
 	};
+	TEST_CLASS(InvalidTest)
+	{
+	public:
+
+		TEST_METHOD(InvalidWord)
+		{
+			//testing output for invalid word
+			char player1[] = "cheese";
+			char player2[] = "cheese";
+			char expected[] = "invalid";
+
+			char* output = PlayRPS(player1, player2);
+			Assert::AreEqual(std::string(expected), std::string(output));
+		}
+		TEST_METHOD(InvalidEmptyWord)
+		{
+			//testing output for empty argument
+			char player1[] = "rock";
+			char player2[] = "";
+			char expected[] = "invalid";
+
+			char* output = PlayRPS(player1, player2);
+			Assert::AreEqual(std::string(expected), std::string(output));
+		}
+		TEST_METHOD(InvalidInputNumber)
+		{
+			//testing output for a number being inputted 
+			char player1[] = "1";
+			char player2[] = "rock";
+			char expected[] = "invalid";
+
+			char* output = PlayRPS(player1, player2);
+			Assert::AreEqual(std::string(expected), std::string(output));
+		}
+	};
 }
