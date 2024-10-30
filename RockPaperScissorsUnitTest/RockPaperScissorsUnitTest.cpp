@@ -79,4 +79,38 @@ namespace RockPaperScissorsUnitTest
 			Assert::AreEqual(std::string(expected), std::string(output));
 		}
 	};
+	TEST_CLASS(DrawTest)
+	{
+	public:
+
+		TEST_METHOD(DrawWithRock)
+		{
+			char player1[] = "rock";
+			char player2[] = "rock";
+			char expected[] = "draw";
+
+			char* output = PlayRPS(player1, player2);
+			Assert::AreEqual(std::string(expected), std::string(output));
+		}
+		TEST_METHOD(DrawWithPaper)
+		{
+			//testing output for when player1 wins
+			char player1[] = "paper";
+			char player2[] = "paper";
+			char expected[] = "draw";
+
+			char* output = PlayRPS(player1, player2);
+			Assert::AreEqual(std::string(expected), std::string(output));
+		}
+		TEST_METHOD(DrawWithScissors)
+		{
+			//testing output for when player1 wins
+			char player1[] = "scissors";
+			char player2[] = "scissors";
+			char expected[] = "draw";
+
+			char* output = PlayRPS(player1, player2);
+			Assert::AreEqual(std::string(expected), std::string(output));
+		}
+	};
 }
