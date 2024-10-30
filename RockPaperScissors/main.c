@@ -19,5 +19,9 @@ char* PlayRPS(char* player1, char* player2) {
 		!(strcmp(player2, "rock") == 0 || strcmp(player2, "paper") == 0 || strcmp(player2, "scissors") == 0)) {
 		return "invalid";
 	}
+	// check if same
+	if (strcmp(player1, player2) == 0) {
 
+		return "draw";
+	}
 }
